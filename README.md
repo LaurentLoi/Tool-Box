@@ -13,11 +13,11 @@ A raw version without Boostrap is available on this branch: [**MODAL-rawCSS**](h
 ---
 ### Demo:
 
-run the app & open your browser on `localhost:4200`
+- Run the app & open your browser on `localhost:4200`
 
-try to click on modal buttons to see them.
+- Click on modal buttons to open them.
 
-open `test.component.ts` to view how it works
+- Open `test.component.ts` to view how it works. Try to change the string parameter `'... MODAL'` with anything else and test it.
 
 ---
 
