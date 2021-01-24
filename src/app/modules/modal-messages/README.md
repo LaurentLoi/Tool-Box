@@ -22,9 +22,9 @@ A raw version without Boostrap is available on this branch: [**MODAL-rawCSS**](h
 ### Get started:
 
 A message uses 3 parameters to display :
-- _messageTitle$ `Title of your modal`
-- _messageBody$ `Body of your modal`
-- _purpose$ `Purpose of your modal, to know which message type to display`
+- `_messageTitle$` Title of your modal
+- `_messageBody$` Body of your modal
+- `_purpose$` Purpose of your modal, to know which message type to display
 
 
 The module comes with 4 messages types :
@@ -74,3 +74,11 @@ Add the new component in `'modal.component.html'` with its purpose as `*ngSwitch
 - Now, when you need your modal to appears, simply call you function via the `messageService.youFunctionName();`
 
 ---
+
+### Implement it:
+
+- Copy the module `ModalMessagesModule` into your app.
+- Add `ModalMessagesModule` to your `app.module.ts imports`
+- Add `<app-modal></app-modal>` in one of the root html (i.e. `app.component.html`)
+- Inject the `messageService: MessageService` in any of your `component.ts`.
+- Call the `messageService.[anyFunctionName(...args)]` to open your modals and display messages.
