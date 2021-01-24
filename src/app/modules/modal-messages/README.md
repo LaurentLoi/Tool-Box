@@ -89,8 +89,9 @@ Each message takes a `(subject: string)` param to display it within the composit
  
  _purpose$.next()
   
-  and add the 'modalService.open()' method's call at the end.
 ```
+- Add the `'modalService.open()'` method's call at the end.
+
 - Now, when you need your modal to appears, simply call you function via the `messageService.youFunctionName();`
 
 ---
