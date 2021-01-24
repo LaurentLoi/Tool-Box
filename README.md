@@ -13,6 +13,8 @@ A raw version without Boostrap is available on this branch: [**MODAL-rawCSS**](h
 ---
 ### Demo:
 
+![demo modal](src/assets/images/modal-demo.jpg)
+
 - Run the app & open your browser on `localhost:4200`
 
 - Click on modal buttons to open them.
@@ -43,12 +45,13 @@ The module comes with 4 messages types :
 Each message takes a `(subject: string)` param to display it within the composition of the message.
 
 ---
-### Customise it:  
-- Change included messages: 
+### Customise it:
 
-Modify `'custom-messages > ...'` HTML / SCSS for new display
+#### Change included messages: 
 
-Modify `message.service.ts` to change message's content
+- Modify `'custom-messages > ...'` HTML / SCSS for new display
+
+- Modify `message.service.ts` to change message's content
 
 - Create new messages: 
 
@@ -60,18 +63,18 @@ Configure your personal HTML / CSS display
 
 Add the new component in `'modal.component.html'` with its purpose as `*ngSwitchCase`
 
-Create a new message function in `'message.service.ts'`. 
+- Create a new message function in `'message.service.ts'`. 
 
-Create your personnal text using:
+- Create your personnal text using:
+ ```
+ _messageTitle$.next()
  
- `_messageTitle$.next()`
+ _messageBody$.next()
  
- `_messageBody$.next()`
- 
- `_purpose$.next()`
+ _purpose$.next()
   
-  and add the `'modalService.open()'` method's call at the end.
-
-Now, when you need your modal to appears, simply call you function via the `messageService.youFunctionName();`
+  and add the 'modalService.open()' method's call at the end.
+```
+- Now, when you need your modal to appears, simply call you function via the `messageService.youFunctionName();`
 
 ---
