@@ -9,6 +9,7 @@ A raw version without Boostrap is available on this branch: [**MODAL-rawCSS**](h
 *raw css - except some functional parts in modal.component.scss*
 
 ---
+
 ### Demo:
 
 - Run the app & open your browser on `localhost:4200`
@@ -41,10 +42,23 @@ The module comes with 4 messages types :
 - ERROR message
 - INFORMATION message
 - SUCCESS message
+
 ---
+
 Each message takes a `(subject: string)` param to display it within the composition of the message.
 
 ---
+
+### Implement it:
+
+- Copy the module `ModalMessagesModule` into your app.
+- Add `ModalMessagesModule` to your `app.module.ts imports`
+- Add `<app-modal></app-modal>` in one of the root html (i.e. `app.component.html`)
+- Inject the `messageService: MessageService` in any of your `component.ts`.
+- Call the `messageService.[anyFunctionName(...args)]` to open your modals and display messages.
+
+---
+
 ### Customise it:
 
 
@@ -80,11 +94,3 @@ Each message takes a `(subject: string)` param to display it within the composit
 - Now, when you need your modal to appears, simply call you function via the `messageService.youFunctionName();`
 
 ---
-
-### Implement it:
-
-- Copy the module `ModalMessagesModule` into your app.
-- Add `ModalMessagesModule` to your `app.module.ts imports`
-- Add `<app-modal></app-modal>` in one of the root html (i.e. `app.component.html`)
-- Inject the `messageService: MessageService` in any of your `component.ts`.
-- Call the `messageService.[anyFunctionName(...args)]` to open your modals and display messages.
