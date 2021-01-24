@@ -15,7 +15,11 @@ A raw version without Boostrap is available on this branch: [**MODAL-rawCSS**](h
 
 - Click on modal buttons to open them.
 
-- Open `test.component.ts` to view how it works. Try to change the string parameter `'... MODAL'` with anything else and test it.
+- Open `test.component.ts` to view how it works.
+
+- Try to change the string parameter `'... MODAL'` with anything else
+
+- Test it.
 
 ---
 
