@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Subscription} from 'rxjs';
 import {MessageService} from '../modules/modal-messages/services/message.service';
+import {map} from 'rxjs/operators';
 
 @Component({
   selector: 'app-test',
@@ -9,30 +10,11 @@ import {MessageService} from '../modules/modal-messages/services/message.service
 })
 export class TestComponent implements OnInit {
 
-  constructor(
-    private messageService: MessageService,
-  ) { }
+
+  constructor() {
+  }
 
   ngOnInit(): void {
-  }
-
-  openInfoModal(): void  {
-    this.messageService.newInfoMessage('INFORMATION MODAL');
-  }
-
-  async openConfirmModal(): Promise<void> {
-    const sub: Subscription = this.messageService.confirm$.subscribe(answer => {
-      console.log(answer);
-    });
-    await this.messageService.newConfirmationMessage(sub, 'CONFIRMATION MODAL');
-  }
-
-  openSuccessModal(): void {
-    this.messageService.newSuccessMessage('SUCCESS MODAL');
-  }
-
-  openErrorModal(): void {
-    this.messageService.newErrorMessage('ERROR MODAL');
   }
 
 }

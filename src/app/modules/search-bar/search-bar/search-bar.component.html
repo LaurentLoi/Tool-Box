@@ -1,0 +1,10 @@
+<h4><label for="search-box">Search ...</label></h4>
+
+<input #searchBox id="search-box" (input)="search(searchBox.value)" (focus)="toggleFocus()" (focusout)="toggleFocus()"/>
+
+<ul class="search-result" [hidden]="!isSearchFocus">
+  <li *ngFor="let object of myArray$ | async">
+    {{object.name}} - {{object.age}}
+  </li>
+</ul>
+
