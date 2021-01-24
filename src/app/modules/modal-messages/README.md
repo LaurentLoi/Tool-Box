@@ -1,4 +1,4 @@
-## 1. Modal messages module
+## Modal messages module
 
 A quite simple modal messaging system.
 
