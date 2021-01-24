@@ -11,8 +11,6 @@ A raw version without Boostrap is available on this branch: [**MODAL-rawCSS**](h
 ---
 ### Demo:
 
-![demo modal](src/assets/images/modal-demo.jpg)
-
 - Run the app & open your browser on `localhost:4200`
 
 - Click on modal buttons to open them.
