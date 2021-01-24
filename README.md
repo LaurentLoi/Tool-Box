@@ -47,6 +47,7 @@ Each message takes a `'subject: string'.`
 - Change included messages: 
 
 `Modify 'custom-messages > ...' HTML / SCSS for new display`
+`Modify message.service.ts to change message's content`
 
 - Create new messages: 
 
