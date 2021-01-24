@@ -88,7 +88,6 @@ Each message takes a `(subject: string)` param to display it within the composit
  _messageBody$.next()
  
  _purpose$.next()
-  
 ```
 - Add the `'modalService.open()'` method's call at the end.
 
