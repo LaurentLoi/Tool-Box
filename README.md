@@ -46,21 +46,32 @@ Each message takes a `(subject: string)` param to display it within the composit
 ### Customise it:  
 - Change included messages: 
 
-`Modify 'custom-messages > ...' HTML / SCSS for new display`
-`Modify message.service.ts to change message's content`
+Modify `'custom-messages > ...'` HTML / SCSS for new display
+
+Modify `message.service.ts` to change message's content
 
 - Create new messages: 
 
-`Create a new component which must extend abstract 'base-message' class`
+Create a new component which must extend abstract `'base-message.ts'` class
 
-`implement constructor with super params`
+implement constructor with `super` params
 
-`Configure your personnal HTML / CSS display`
+Configure your personal HTML / CSS display
 
-`Add the new component in 'modal.component.html' with it's purpose as *ngSwitchCase`
+Add the new component in `'modal.component.html'` with its purpose as `*ngSwitchCase`
 
-`Create a new message function in 'message.service.ts'. Create your personnal text using _messageTitle$.next(), _messageBody$.next() && _purpose$.next() and add the 'modalService.open() call at the end.`
+Create a new message function in `'message.service.ts'`. 
 
-`Now, when you need your modal to appears, simply call you function via the messageService.youFunctionName();`
+Create your personnal text using:
+ 
+ `_messageTitle$.next()`
+ 
+ `_messageBody$.next()`
+ 
+ `_purpose$.next()`
+  
+  and add the `'modalService.open()'` method's call at the end.
+
+Now, when you need your modal to appears, simply call you function via the `messageService.youFunctionName();`
 
 ---
