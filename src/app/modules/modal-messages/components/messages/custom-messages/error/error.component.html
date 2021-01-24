@@ -1,5 +1,5 @@
 <!-- Modal Header -->
-<div class="modal-header row">
+<div class="">
   <button type="button" class="close" (click)="close()">&times;</button>
   <div class="col-12 text-center">
     <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-alert-triangle" width="80" height="80" viewBox="0 0 24 24" stroke-width="1.5" stroke="#d9534f" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -8,16 +8,16 @@
       <path d="M5 19h14a2 2 0 0 0 1.84 -2.75l-7.1 -12.25a2 2 0 0 0 -3.5 0l-7.1 12.25a2 2 0 0 0 1.75 2.75" />
     </svg>
   </div>
-  <h4 class="modal-title">{{(messageTitle$ | async)}}</h4>
+  <h4 class="">{{(messageTitle$ | async)}}</h4>
 </div>
 
 <!-- Modal body -->
-<div class="modal-body">
+<div class="">
   {{(messageBody$ | async)}}
 </div>
 
 <!-- Modal footer -->
-<div class="modal-footer">
+<div class="">
   <button type="button" class="button" (click)="close()">Ok</button>
 </div>
 
