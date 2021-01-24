@@ -23,13 +23,13 @@ A raw version without Boostrap is available on this branch: [**MODAL-rawCSS**](h
 
 ### Get started:
 
-A message use 3 parameters to display :
+A message uses 3 parameters to display :
 - _messageTitle$ `Title of your modal`
 - _messageBody$ `Body of your modal`
 - _purpose$ `Purpose of your modal, to know which message type to display`
 
 
-Module comes with 4 messages types :
+The module comes with 4 messages types :
 #### With action: 
 - CONFIRMATION message 
 
