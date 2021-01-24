@@ -4,12 +4,11 @@
 
 A quite simple modal messaging system.
 
-### Available releases : 
+This module is using [Bootstrap 5.0](https://getbootstrap.com/docs/5.0/getting-started/introduction/) for an easy rendering.
 
-- with Boostrap 5.0 - [**MODAL-w/Boostrap branch**](https://github.com/LaurentLoi/Tool-Box/tree/MODAL-w/Bootstrap5)
+A raw version without Boostrap is available on this branch: [**MODAL-rawCSS**](https://github.com/LaurentLoi/Tool-Box/tree/MODAL-rawCSS)
 
-- with raw CSS - [**MODAL-rawCSS branch**](https://github.com/LaurentLoi/Tool-Box/tree/MODAL-rawCSS)
-*(except some functional parts in modal.component.scss)*
+*raw css - except some functional parts in modal.component.scss*
 
 ---
 ### Demo:
@@ -22,7 +21,7 @@ open `test.component.ts` to view how it works
 
 ---
 
-### Basic informations:
+### Get started:
 
 A message use 3 parameters to display :
 - _messageTitle$ `Title of your modal`
@@ -40,10 +39,10 @@ Basically configured with 4 message's types :
 - INFORMATION message
 - SUCCESS message
 ---
-Each message takes a `'subject: string'.`
+Each message takes a `(subject: string)` param to display it within the composition of the message.
 
 ---
-### Get started:  
+### Customise it:  
 - Change included messages: 
 
 `Modify 'custom-messages > ...' HTML / SCSS for new display`
