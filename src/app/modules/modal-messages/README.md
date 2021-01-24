@@ -47,13 +47,15 @@ Each message takes a `(subject: string)` param to display it within the composit
 ---
 ### Customise it:
 
-#### Change included messages: 
+
+#### Change existing messages: 
 
 - Modify `'custom-messages > ...'` HTML / SCSS for new display
 
 - Modify `message.service.ts` to change message's content
 
-- Create new messages: 
+
+#### Create new messages: 
 
 Create a new component which must extend abstract `'base-message.ts'` class
 
