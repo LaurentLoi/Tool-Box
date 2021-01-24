@@ -28,7 +28,8 @@ A message use 3 parameters to display :
 - _messageBody$ `Body of your modal`
 - _purpose$ `Purpose of your modal, to know which message type to display`
 
-Basically configured with 4 message's types :
+
+Module comes with 4 messages types :
 #### With action: 
 - CONFIRMATION message 
 
