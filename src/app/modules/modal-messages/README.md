@@ -57,13 +57,13 @@ Each message takes a `(subject: string)` param to display it within the composit
 
 #### Create new messages: 
 
-Create a new component which must extend abstract `'base-message.ts'` class
+- Create a new component which must extend abstract `'base-message.ts'` class
 
-implement constructor with `super` params
+- Implement constructor with `super` params
 
-Configure your personal HTML / CSS display
+- Configure your personal HTML / CSS display
 
-Add the new component in `'modal.component.html'` with its purpose as `*ngSwitchCase`
+- Add the new component in `'modal.component.html'` with its purpose as `*ngSwitchCase`
 
 - Create a new message function in `'message.service.ts'`. 
 
