@@ -28,6 +28,7 @@ export class SearchBarComponent implements OnInit {
   }
 
   search(term: string): void {
+    console.log(term);
     this.searchTerms.next(term);
   }
 
@@ -35,4 +36,9 @@ export class SearchBarComponent implements OnInit {
     this.isSearchFocus = !this.isSearchFocus;
   }
 
+  select(selectedName: string): void {
+    this.search(selectedName);
+    document.querySelector<HTMLInputElement>('#search-box').value = selectedName;
+    // search(object.name); searchBox.value = object.name
+  }
 }
