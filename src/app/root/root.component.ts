@@ -4,11 +4,11 @@ import {MessageService} from '../modules/modal-messages/services/message.service
 import {map} from 'rxjs/operators';
 
 @Component({
-  selector: 'app-test',
-  templateUrl: './test.component.html',
-  styleUrls: ['./test.component.scss']
+  selector: 'app-root',
+  templateUrl: './root.component.html',
+  styleUrls: ['./root.component.scss']
 })
-export class TestComponent implements OnInit {
+export class RootComponent implements OnInit {
 
 
   constructor() {
