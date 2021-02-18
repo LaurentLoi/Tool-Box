@@ -23,7 +23,11 @@ export class DemoModalMessageComponent implements OnInit {
 
   async openConfirmModal(): Promise<void> {
     const sub: Subscription = this.messageService.confirm$.subscribe(answer => {
-      console.log(answer);
+      if (answer === true) {
+        alert('Confirmed !');
+      } else if (answer === false){
+        alert('Canceled !');
+      }
     });
     await this.messageService.newConfirmationMessage(sub, 'CONFIRMATION MODAL');
   }
