@@ -1,7 +1,7 @@
-<div *ngIf="(myArray$ | async) as myArray">
+<div *ngIf="(searchableMockArray$ | async) as searchableArray">
   <div class="row">
     <div class="col-9"></div>
-    <app-search-bar [myArray$]="myArray$" (searchEmitter)="search($event)" class="col-2"></app-search-bar>
+    <app-search-bar [searchableMockArray$]="searchableMockArray$" (searchEmitter)="search($event)" class="col-2"></app-search-bar>
     <div class="col-1"></div>
   </div>
   <div class="row">
@@ -16,9 +16,9 @@
         </tr>
         </thead>
         <tbody>
-        <tr *ngFor="let cell of myArray">
-          <td>{{cell.name}}</td>
-          <td>{{cell.age}}</td>
+        <tr *ngFor="let entity of searchableArray">
+          <td>{{entity.name}}</td>
+          <td>{{entity.age}}</td>
         </tr>
         </tbody>
       </table>

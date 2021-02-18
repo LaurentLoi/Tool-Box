@@ -9,11 +9,10 @@ import {debounceTime, distinctUntilChanged} from 'rxjs/operators';
 })
 export class SearchBarComponent implements OnInit {
 
-  @Input() myArray$: Observable<any[]>;
+  @Input() searchableMockArray$: Observable<any[]>;
 
   @Output() searchEmitter: EventEmitter<string> = new EventEmitter<string>();
   private searchTerms = new Subject<string>();
-  isSearchFocus = false;
 
   constructor() {
   }
@@ -32,13 +31,8 @@ export class SearchBarComponent implements OnInit {
     this.searchTerms.next(term);
   }
 
-  toggleFocus(): void {
-    this.isSearchFocus = !this.isSearchFocus;
-  }
-
   select(selectedName: string): void {
     this.search(selectedName);
     document.querySelector<HTMLInputElement>('#search-box').value = selectedName;
-    // search(object.name); searchBox.value = object.name
   }
 }

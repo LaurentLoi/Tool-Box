@@ -1,13 +1,13 @@
 import {Component, OnInit} from '@angular/core';
-import {MessageService} from '../../modules/modal-messages/services/message.service';
+import {MessageService} from '../services/message.service';
 import {Subscription} from 'rxjs';
 
 @Component({
-  selector: 'app-modal-message-test',
-  templateUrl: './modal-message-test.component.html',
-  styleUrls: ['./modal-message-test.component.scss']
+  selector: 'app-demo-modal-message',
+  templateUrl: './demo-modal-message.component.html',
+  styleUrls: ['./demo-modal-message.component.scss']
 })
-export class ModalMessageTestComponent implements OnInit {
+export class DemoModalMessageComponent implements OnInit {
 
   constructor(
     private messageService: MessageService,

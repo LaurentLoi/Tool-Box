@@ -26,7 +26,9 @@ export class MessageService {
 
   // tslint:disable-next-line:variable-name
   private readonly _confirm$ = new BehaviorSubject<boolean>(null);
-  public readonly confirm$ = this._confirm$.asObservable();
+  public readonly confirm$ = this._confirm$.pipe(
+    filter(answer => answer !== null && answer !== undefined)
+  );
 
   subscription: Subscription;
 

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-nav-bar',
@@ -9,18 +9,19 @@ export class NavBarComponent implements OnInit {
 
   previousElement;
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit(): void {
-    this.previousElement = document.getElementById('home-link');
+    this.previousElement = document.getElementById('home-link') as HTMLLinkElement;
+    this.previousElement.classList.add('active');
   }
 
 
   selectLink($event: MouseEvent): void {
 
-    if (this.previousElement){
-      this.previousElement.classList.remove('active');
-    }
+    this.previousElement.classList.remove('active');
+
     this.previousElement = ($event.target as HTMLLinkElement);
 
     ($event.target as HTMLLinkElement).classList.add('active');

@@ -6,8 +6,8 @@ import { AppComponent } from './app.component';
 import {ModalMessagesModule} from './modules/modal-messages/modal-messages.module';
 import { RootComponent } from './root/root.component';
 import {SearchBarModule} from './modules/search-bar/search-bar.module';
-import { SearchBarTestComponent } from './root/search-bar-test/search-bar-test.component';
-import { ModalMessageTestComponent } from './root/modal-message-test/modal-message-test.component';
+import { DemoSearchBarComponent } from './modules/search-bar/demo-search-bar/demo-search-bar.component';
+import { DemoModalMessageComponent } from './modules/modal-messages/demo-modal-message/demo-modal-message.component';
 import {NavBarModule} from './modules/nav-bar/nav-bar.module';
 import { IndexComponent } from './root/index/index.component';
 
@@ -15,8 +15,8 @@ import { IndexComponent } from './root/index/index.component';
   declarations: [
     AppComponent,
     RootComponent,
-    SearchBarTestComponent,
-    ModalMessageTestComponent,
+    DemoSearchBarComponent,
+    DemoModalMessageComponent,
     IndexComponent
   ],
     imports: [

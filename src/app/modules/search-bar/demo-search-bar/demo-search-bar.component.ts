@@ -4,26 +4,25 @@ import {map} from 'rxjs/operators';
 
 @Component({
   selector: 'app-search-bar-test',
-  templateUrl: './search-bar-test.component.html',
-  styleUrls: ['./search-bar-test.component.scss']
+  templateUrl: './demo-search-bar.component.html',
+  styleUrls: ['./demo-search-bar.component.scss']
 })
-export class SearchBarTestComponent implements OnInit {
+export class DemoSearchBarComponent implements OnInit {
 
-  myArray$: Observable<any[]>;
+  searchableMockArray$: Observable<any[]>;
 
   constructor() {
   }
 
   ngOnInit(): void {
-    this.myArray$ = of(myMockDataArray);
+    this.searchableMockArray$ = of(myMockDataArray);
   }
 
   search(searchTerm: any): void {
-    this.myArray$ = of(myMockDataArray);
+    this.searchableMockArray$ = of(myMockDataArray);
 
     searchTerm = searchTerm.toLowerCase().trim();
-
-    this.myArray$ = this.myArray$.pipe(
+    this.searchableMockArray$ = this.searchableMockArray$.pipe(
       map(persons => persons.filter(person =>
         person.name.toLowerCase().includes(searchTerm)
       ))

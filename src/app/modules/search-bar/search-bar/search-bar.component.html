@@ -1,13 +1,14 @@
 <h4><label for="search-box">Search ...</label></h4>
 
-<input #searchBox id="search-box" (input)="search(searchBox.value)" (focus)="toggleFocus()" (click)="isSearchFocus = true"/>
+<ng-container class="search">
+<input #searchBox id="search-box" (input)="search(searchBox.value)"/>
 
-<ul class="search-result" [hidden]="!isSearchFocus">
-  <li *ngFor="let object of myArray$ | async" >
-    <span (mouseenter)="searchBox.value = object.name"
-          (click)="select(object.name)">
+<ul class="search-result" [hidden]="!(searchBox.value != '')">
+  <li *ngFor="let object of searchableMockArray$ | async">
+    <button class="ps-1" (click)="select(object.name)">
       {{object.name}} - {{object.age}}
-    </span>
+    </button>
   </li>
 </ul>
 
+</ng-container>
