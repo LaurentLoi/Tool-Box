@@ -1,19 +1,21 @@
-<div class="row g-0">
-  <div class="col-3 text-center">
-    <button class="btn btn-dark m-3" (click)="openInfoModal()">INFO MODAL</button>
+
+  <div class="row">
+    <div class="col-3 text-center button-ctn-md">
+      <button class="btn btn-dark m-3 button" (click)="openInfoModal()">INFO MODAL</button>
+    </div>
+
+    <div class="col-3 text-center button-ctn-md">
+      <button class="btn btn-dark m-3 button" (click)="openConfirmModal()">CONFIRM MODAL</button>
+    </div>
+
+    <div class="col-3 text-center button-ctn-md">
+      <button class="btn btn-dark m-3 button" (click)="openSuccessModal()">SUCCESS MODAL</button>
+    </div>
+
+    <div class="col-3 text-center button-ctn-md">
+      <button class="btn btn-dark m-3 button" (click)="openErrorModal()">ERROR MODAL</button>
+    </div>
   </div>
 
-  <div class="col-3 text-center">
-    <button class="btn btn-dark m-3" (click)="openConfirmModal()">CONFIRM MODAL</button>
-  </div>
-
-  <div class="col-3 text-center">
-    <button class="btn btn-dark m-3" (click)="openSuccessModal()">SUCCESS MODAL</button>
-  </div>
-
-  <div class="col-3 text-center">
-    <button class="btn btn-dark m-3" (click)="openErrorModal()">ERROR MODAL</button>
-  </div>
-</div>
 
 <app-modal></app-modal>

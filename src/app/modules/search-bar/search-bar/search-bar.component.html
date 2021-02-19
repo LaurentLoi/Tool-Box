@@ -6,9 +6,17 @@
 
   <ul class="search-result" [hidden]="!(searchBox.value != '')" *ngIf="searchableMockArray.length > 1">
     <li *ngFor="let object of searchableMockArray$ | async">
-      <button class="ps-1" (click)="select(object.name)">
-        {{object.name}} - {{object.age}}
-      </button>
+
+      <ng-container [ngSwitch]="purpose"> <!--PURPOSE SELECTION-->
+
+        <!--CASE : USERS-->
+        <button class="ps-1" *ngSwitchCase="'users'" (click)="select(object.name)">
+          {{object.name}} - {{object.age}}
+        </button>
+        <!--END USERS-->
+
+      </ng-container>
+
     </li>
   </ul>
 
