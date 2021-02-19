@@ -13,6 +13,7 @@ export class SearchBarComponent implements OnInit {
   @Input() purpose: string;
 
   @Output() searchEmitter: EventEmitter<string> = new EventEmitter<string>();
+
   private searchTerms$ = new Subject<string>();
   private searchTerms = '';
 

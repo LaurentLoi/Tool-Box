@@ -4,10 +4,11 @@
 
   <input #searchBox id="search-box" (input)="search(searchBox.value)"/>
 
-  <ul class="search-result" [hidden]="!(searchBox.value != '')" *ngIf="searchableMockArray.length > 1">
-    <li *ngFor="let object of searchableArray$ | async">
+  <ul class="search-result" [hidden]="searchBox.value == ''" *ngIf="searchableMockArray.length > 1">
+    <li *ngFor="let object of searchableMockArray">
 
-      <ng-container [ngSwitch]="purpose"> <!--PURPOSE SELECTION-->
+      <!--PURPOSE SELECTION-->
+      <ng-container [ngSwitch]="purpose">
 
         <!--CASE : USERS-->
         <button class="ps-1"
