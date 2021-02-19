@@ -34,7 +34,7 @@ export class ModalComponent implements OnInit {
   }
 
   confirm(answer: boolean): void {
-    this.messageService.confirm(answer);
+    this.messageService.answerConfirm(answer);
     this.modalService.close();
     this.messageService.resetConfirm();
     if (this.messageService.subscription != null) {

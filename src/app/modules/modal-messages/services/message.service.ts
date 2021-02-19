@@ -8,25 +8,21 @@ import {ModalService} from './modal.service';
 })
 export class MessageService {
 
-  // tslint:disable-next-line:variable-name
-  private readonly _messageTitle$ = new BehaviorSubject<string>(null);
-  public readonly messageTitle$ = this._messageTitle$.pipe(
+  private readonly messageTitle = new BehaviorSubject<string>(null);
+  public readonly messageTitle$ = this.messageTitle.pipe(
     filter(message => !!message)
   );
 
-  // tslint:disable-next-line:variable-name
-  private readonly _messageBody$ = new BehaviorSubject<string>(null);
-  public readonly messageBody$ = this._messageBody$.asObservable();
+  private readonly messageBody = new BehaviorSubject<string>(null);
+  public readonly messageBody$ = this.messageBody.asObservable();
 
-  // tslint:disable-next-line:variable-name
-  private readonly _purpose$ = new BehaviorSubject<string>(null);
-  public readonly purpose$ = this._purpose$.pipe(
+  private readonly purpose = new BehaviorSubject<string>(null);
+  public readonly purpose$ = this.purpose.pipe(
     filter(purpose => !!purpose)
   );
 
-  // tslint:disable-next-line:variable-name
-  private readonly _confirm$ = new BehaviorSubject<boolean>(null);
-  public readonly confirm$ = this._confirm$.pipe(
+  private readonly confirm = new BehaviorSubject<boolean>(null);
+  public readonly confirm$ = this.confirm.pipe(
     filter(answer => answer !== null && answer !== undefined)
   );
 
@@ -38,49 +34,49 @@ export class MessageService {
   }
 
 // COMMON
-  confirm(answer: boolean): void {
-    this._confirm$.next(answer);
+  answerConfirm(answer: boolean): void {
+    this.confirm.next(answer);
   }
 
   resetConfirm(): void {
     this.resetFields();
-    this._confirm$.next(null);
+    this.confirm.next(null);
   }
 
   resetFields(): void {
-    this._messageTitle$.next(null);
-    this._messageBody$.next(null);
-    this._purpose$.next(null);
+    this.messageTitle.next(null);
+    this.messageBody.next(null);
+    this.purpose.next(null);
   }
 
   // MESSAGES
 
   newInfoMessage(subject: string): void {
-    this._messageTitle$.next(subject + ' is confirmed.');
-    this._messageBody$.next(`Your ${subject} has been added.`);
-    this._purpose$.next('info');
+    this.messageTitle.next(subject + ' is confirmed.');
+    this.messageBody.next(`Your ${subject} has been added.`);
+    this.purpose.next('info');
     this.modalService.open();
   }
 
   newConfirmationMessage(sub: Subscription, subject: string): void {
     this.subscription = sub;
-    this._messageTitle$.next(`Confirmation test about ${subject}`);
-    this._messageBody$.next(`Let's play with it`);
-    this._purpose$.next('confirm');
+    this.messageTitle.next(`Confirmation test about ${subject}`);
+    this.messageBody.next(`Let's play with it`);
+    this.purpose.next('confirm');
     this.modalService.open();
   }
 
   newSuccessMessage(subject: string): void {
-    this._messageTitle$.next(subject + ' is confirmed.');
-    this._messageBody$.next(`Your ${subject} has been added.`);
-    this._purpose$.next('success');
+    this.messageTitle.next(subject + ' is confirmed.');
+    this.messageBody.next(`Your ${subject} has been added.`);
+    this.purpose.next('success');
     this.modalService.open();
   }
 
   newErrorMessage(subject: string): void {
-    this._messageTitle$.next('Problem: ');
-    this._messageBody$.next(`There was a problem with ${subject}. Please try again`);
-    this._purpose$.next('error');
+    this.messageTitle.next('Problem: ');
+    this.messageBody.next(`There was a problem with ${subject}. Please try again`);
+    this.purpose.next('error');
     this.modalService.open();
   }
 
