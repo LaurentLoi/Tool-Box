@@ -1,12 +1,8 @@
-## Modal messages module
+## Search-bar module
 
-A quite simple modal messaging system.
+A quite simple search-bar system.
 
 This module is using [Bootstrap 5.0](https://getbootstrap.com/docs/5.0/getting-started/introduction/) for an easy rendering.
-
-A raw version without Boostrap is available on this branch: [**MODAL-rawCSS**](https://github.com/LaurentLoi/Tool-Box/tree/MODAL-rawCSS).
-
-*raw css - except some functional parts in modal.component.scss*.
 
 ---
 
@@ -14,25 +10,23 @@ A raw version without Boostrap is available on this branch: [**MODAL-rawCSS**](h
 
 - Run the app & open your browser on `localhost:4200`.
 
-- Click on 'Modal Message Service' link.
+- Click on 'Search-bar' link.
 
-- Click on modal buttons to open them.
+- Enter any letter in the input `Search ...` field.
 
-- Open `demo-modal-message.component.html` to view how it works.
-
-- Try to change the function parameter `subject: 'string'` with anything else.
-
-- Test it.
+- Open `demo-search-bar.component.html` and check the `<app-search-bar>` to view how it works.
 
 ---
 
 ### Get started:
 
-A message uses 3 parameters to display :
-- `_messageTitle$` Title of your modal.
-- `_messageBody$` Body of your modal.
-- `_purpose$` Purpose of your modal, to know which message type to display.
+The search-bar component needs 3 parameters to work:
 
+- `searchableArray$: Observable<any[]>` → `@Input()` - Your Observable array where to search in.
+  
+- `purpose: String` → `@Input()` keyword to allow you to configure what appears in the search results accordingly to your data type.
+  
+- `(searchEmitter)="search($event)"` → `@Output()` event that send back the search input field content as a string, to use with a `search($event)` function in your parent component.
 
 The module comes with 4 messages types :
 #### With action: 

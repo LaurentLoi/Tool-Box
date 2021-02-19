@@ -9,7 +9,7 @@ import {debounceTime, distinctUntilChanged} from 'rxjs/operators';
 })
 export class SearchBarComponent implements OnInit {
 
-  @Input() searchableMockArray$: Observable<any[]>;
+  @Input() searchableArray$: Observable<any[]>;
   @Input() purpose: string;
 
   @Output() searchEmitter: EventEmitter<string> = new EventEmitter<string>();

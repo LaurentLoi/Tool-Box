@@ -1,11 +1,11 @@
 <h4><label for="search-box">Search ...</label></h4>
 
-<ng-container class="search" *ngIf="searchableMockArray$ | async as searchableMockArray">
+<ng-container class="search" *ngIf="searchableArray$ | async as searchableMockArray">
 
   <input #searchBox id="search-box" (input)="search(searchBox.value)"/>
 
   <ul class="search-result" [hidden]="!(searchBox.value != '')" *ngIf="searchableMockArray.length > 1">
-    <li *ngFor="let object of searchableMockArray$ | async">
+    <li *ngFor="let object of searchableArray$ | async">
 
       <ng-container [ngSwitch]="purpose"> <!--PURPOSE SELECTION-->
 
