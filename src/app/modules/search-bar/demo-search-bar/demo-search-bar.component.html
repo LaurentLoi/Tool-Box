@@ -1,4 +1,4 @@
-<div *ngIf="(searchableMockArray$ | async) as searchableArray">
+<div *ngIf="(searchableMockArray$ | async) as searchableUsersArray">
   <div class="row g-0">
     <div class="col-8"></div>
 
@@ -15,7 +15,7 @@
     <div class="col-2"></div>
     <div class="col-8">
       <h4>Search-bar - Users Mock Data: </h4>
-      <table class="table" *ngIf="searchableArray.length > 0">
+      <table class="table" *ngIf="searchableUsersArray.length > 0">
         <thead>
         <tr>
           <th>Name</th>
@@ -23,13 +23,13 @@
         </tr>
         </thead>
         <tbody>
-        <tr *ngFor="let entity of searchableArray">
-          <td>{{entity.name}}</td>
-          <td>{{entity.age}}</td>
+        <tr *ngFor="let user of searchableUsersArray">
+          <td>{{user.name}}</td>
+          <td>{{user.age}}</td>
         </tr>
         </tbody>
       </table>
-      <div *ngIf="searchableArray.length === 0">
+      <div *ngIf="searchableUsersArray.length === 0">
         <h5 class="no-result">No result.</h5>
       </div>
     </div>

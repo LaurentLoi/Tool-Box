@@ -19,14 +19,18 @@ export class DemoSearchBarComponent implements OnInit {
   }
 
   search(searchTerm: any): void {
+    // Reset of data
     this.searchableMockArray$ = of(myMockDataArray);
-
+    // Lower case searchTerm
     searchTerm = searchTerm.toLowerCase().trim();
+
+    // Filter Observable<...[]>
     this.searchableMockArray$ = this.searchableMockArray$.pipe(
       map(users => users.filter(user =>
         user.name.toLowerCase().includes(searchTerm)
       ))
     );
+
   }
 
 }
