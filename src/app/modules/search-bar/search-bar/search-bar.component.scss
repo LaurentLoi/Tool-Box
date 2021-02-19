@@ -39,7 +39,7 @@ ul.search-result {
   padding-left: 0;
   position: absolute;
   z-index: 1000;
-  height: 200px;
+  max-height: 200px;
   overflow-y: scroll;
   overflow-x: hidden;
   background-color: $background;
