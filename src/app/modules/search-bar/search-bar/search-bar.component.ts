@@ -33,9 +33,9 @@ export class SearchBarComponent implements OnInit {
     this.searchTerms$.next(term);
   }
 
-  select(selectedName: string): void {
-    this.search(selectedName);
-    document.querySelector<HTMLInputElement>('#search-box').value = selectedName;
+  select(selectedStringValue: string): void {
+    this.search(selectedStringValue);
+    document.querySelector<HTMLInputElement>('#search-box').value = selectedStringValue;
   }
 
   searchMatchToBold(subject: string): string {

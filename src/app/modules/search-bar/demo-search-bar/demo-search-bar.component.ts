@@ -23,8 +23,8 @@ export class DemoSearchBarComponent implements OnInit {
 
     searchTerm = searchTerm.toLowerCase().trim();
     this.searchableMockArray$ = this.searchableMockArray$.pipe(
-      map(persons => persons.filter(person =>
-        person.name.toLowerCase().includes(searchTerm)
+      map(users => users.filter(user =>
+        user.name.toLowerCase().includes(searchTerm)
       ))
     );
   }
@@ -32,12 +32,12 @@ export class DemoSearchBarComponent implements OnInit {
 }
 
 // MOCK DATA FOR DEMO
-export interface PersonModel {
+export interface UserModel {
   name: string;
   age: number;
 }
 
-export const myMockDataArray: PersonModel[] = [
+export const myMockDataArray: UserModel[] = [
   {name: 'Abraham', age: 132},
   {name: 'Baptiste', age: 61},
   {name: 'Charlie', age: 24},

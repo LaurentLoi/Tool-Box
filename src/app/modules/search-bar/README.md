@@ -2,7 +2,8 @@
 
 A quite simple search-bar system.
 
-This module is using [Bootstrap 5.0](https://getbootstrap.com/docs/5.0/getting-started/introduction/) for an easy rendering.
+This module is using [Bootstrap 5.0](https://getbootstrap.com/docs/5.0/getting-started/introduction/) 
+for an easy rendering.
 
 ---
 
@@ -12,7 +13,7 @@ This module is using [Bootstrap 5.0](https://getbootstrap.com/docs/5.0/getting-s
 
 - Click on 'Search-bar' link.
 
-- Enter any letter in the input `Search ...` field.
+- Enter any letter in the `<input>` Search ... field.
 
 - Open `demo-search-bar.component.html` and check the `<app-search-bar>` to view how it works.
 
@@ -24,70 +25,56 @@ The search-bar component needs 3 parameters to work:
 
 - `searchableArray$: Observable<any[]>` → `@Input()` - Your Observable array where to search in.
   
-- `purpose: String` → `@Input()` keyword to allow you to configure what appears in the search results accordingly to your data type.
+- `purpose: String` → `@Input()` keyword to allow you to configure what appears in the search results 
+  accordingly to your data type.
   
-- `(searchEmitter)="search($event)"` → `@Output()` event that send back the search input field content as a string, to use with a `search($event)` function in your parent component.
-
-The module comes with 4 messages types :
-#### With action: 
-- CONFIRMATION message 
-
-`Listen to a "confirm / cancel" action - requires to subscribe`
-
-#### Without action
-- ERROR message
-- INFORMATION message
-- SUCCESS message
-
----
-
-Each message takes a `(subject: string)` param to display it within the composition of the message.
+- `(searchEmitter)="search($event)"` → `@Output()` event that send back the search input field content 
+  as a string, to use with a `search($event)` function in your parent component.
 
 ---
 
 ### Implement it:
 
-- Copy the module `ModalMessagesModule` into your app.
-- Add `ModalMessagesModule` to your `app.module.ts imports`.
-- Add `<app-modal></app-modal>` in one of the root html (i.e. `app.component.html`).
-- Inject the `messageService: MessageService` in any of your `component.ts`.
-- Call the `messageService.[anyFunctionName(...args)]` to open your modals and display messages.
+- Copy the `Search-bar` Module into your app.
+- Add `SearchBarModule` to your `app.module.ts imports`.
+- Add `<app-search-bar></app-search-bar>` in your component's html with it's params (see @Get started).
+- Create your own `search($event)` function in your component's .ts file (see example in 
+  `demo-search-bar.component.ts`) to effectively filter your Observable array.
 
 ---
 
 ### Customise it:
 
+#### Configure a new data-type to search in: 
 
-#### Change existing messages: 
+- Open `search-bar.component.html`.
 
-- Modify `'custom-messages > ...'` HTML / SCSS for new display.
+- Copy / paste the USER case: 
 
-- Modify `message.service.ts` to change message's content.
-
-
-#### Create new messages: 
-
-- Create a new component which must extend abstract `'base-message.ts'` class.
-
-- Implement constructor with `super` params.
-
-- Configure your personal HTML / CSS display.
-
-- Add the new component in `'modal.component.html'` with its purpose as `*ngSwitchCase`.
-
-- Create a new message function in `'message.service.ts'`.
-
-- Create your personal text using:
  ```
- _messageTitle$.next()
- 
- _messageBody$.next()
- 
- _purpose$.next()
-```
+ <!--CASE : USERS-->
+   <button class="ps-1"
+     *ngSwitchCase="'users'"
+     (click)="select(object.name)"
+     [innerHTML]="searchMatchToBold(object.name)">
+   </button>
+ <!--END USERS-->
+ ```
+- Replace `'users'` switch case with your own `'purpose'` parameter.
 
-- Add the `'modalService.open()'` method's call at the end.
+- Replace the `(click)="select([...])"` with the object string property you want to display 
+  in the search `<input>` field. (When a user clicks on one of the search results).
 
-- Now, when you need your modal to appears, simply call you function via the `messageService.yourFunctionName();`
+- Replace the `[innerHTML]="searchMatchToBold([...])"` with the object string property you 
+  want to display in the search-results area.
+  
+    - the `searchMatchToBold([...])` function put the search input content to bold into 
+      the search results and UpperCase it's first letter (first word only).
+  
+---
+
+### Sources & inspirations: 
+
+- [Angular - Tour-of-Heroes](https://angular.io/tutorial/toh-pt6#search-by-name)
 
 ---

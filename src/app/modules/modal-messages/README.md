@@ -53,7 +53,7 @@ Each message takes a `(subject: string)` param to display it within the composit
 
 ### Implement it:
 
-- Copy the module `ModalMessagesModule` into your app.
+- Copy the `ModalMessages` Module into your app.
 - Add `ModalMessagesModule` to your `app.module.ts imports`.
 - Add `<app-modal></app-modal>` in one of the root html (i.e. `app.component.html`).
 - Inject the `messageService: MessageService` in any of your `component.ts`.
@@ -95,5 +95,11 @@ Each message takes a `(subject: string)` param to display it within the composit
 - Add the `'modalService.open()'` method's call at the end.
 
 - Now, when you need your modal to appears, simply call you function via the `messageService.yourFunctionName();`
+
+---
+
+### Sources & inspirations:
+
+- [Angular - Modals without libs](https://dev.to/daviddalbusco/create-a-modal-for-your-angular-app-without-libs-4hh9)
 
 ---
