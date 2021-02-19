@@ -4,7 +4,8 @@ A quite simple modal messaging system.
 
 This module is using [Bootstrap 5.0](https://getbootstrap.com/docs/5.0/getting-started/introduction/) for an easy rendering.
 
-A raw version without Boostrap is available on this branch: [**MODAL-rawCSS**](https://github.com/LaurentLoi/Tool-Box/tree/MODAL-rawCSS).
+A raw version without Boostrap is available on this branch: 
+[**MODAL-rawCSS**](https://github.com/LaurentLoi/Tool-Box/tree/MODAL-rawCSSsrc/app/modules/modal-messages).
 
 *raw css - except some functional parts in modal.component.scss*.
 
